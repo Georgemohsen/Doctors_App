@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_doctors_app/colors.dart';
+import 'package:flutter_doctors_app/pages/doctor_page.dart';
 import 'package:flutter_doctors_app/widgets/category_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -176,7 +177,15 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 SizedBox(height: 15),
-                doctorCard(),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DoctorPage()),
+                    );
+                  },
+                  child: doctorCard(),
+                ),
                 SizedBox(height: 15),
                 doctorCard(),
                 SizedBox(height: 15),
@@ -244,7 +253,7 @@ class _HomePageState extends State<HomePage> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
-                  'assets/images/doctor.jpg',
+                  'assets/images/doctor2.jpg',
                   width: 100,
                   height: 100,
                   fit: BoxFit.cover,
